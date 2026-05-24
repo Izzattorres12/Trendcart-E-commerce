@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile - TrendCart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html"><i class="bi bi-bag-check-fill"></i> TrendCart</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+    <button id="darkModeBtn" class="btn btn-sm btn-dark" onclick="toggleDarkMode()">
+        🌙 Dark Mode
+    </button>
+</li>
+</li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html"><i class="bi bi-cart3"></i> Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orders.html">Orders</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger" href="index.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5 flex-grow-1">
+        <h2 class="fw-bold mb-4">My Account</h2>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card card-custom p-4 text-center">
+                  <div class="mb-3 d-flex justify-content-center">
+    <img src="image/profilepic.jpg"
+         width="140"
+         height="140"
+         class="rounded-circle shadow"
+         style="object-fit: cover; border: 4px solid white;">
+</div>
+                    <h4 class="fw-bold mb-1">Izzat Roslan</h4>
+                    <p class="email-text">izzat12@gmail.com</p>
+                    <hr>
+                    <div class="text-start">
+                        <p class="mb-1 fw-semibold"><i class="bi bi-telephone"></i> +60 1111656917</p>
+                        <p class="mb-1 fw-semibold"><i class="bi bi-geo-alt"></i> Kolej Jasmine, UITM Puncak Perdana, Shah Alam.</p>
+                    </div>
+                    <button class="btn btn-outline-custom w-100 mt-3">Edit Profile</button>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card card-custom p-4 mb-4">
+                    <h5 class="fw-bold mb-4"><i class="bi bi-heart-fill text-danger"></i> Saved Items (Wishlist)</h5>
+                    <div class="d-flex align-items-center gap-3 border-bottom pb-3 mb-3">
+                     <div class="bg-light rounded p-2">
+    <img src="image/smartwatch.jpg"
+         width="70"
+         height="70"
+         class="rounded"
+         style="object-fit: cover;">
+</div>
+                        <div class="flex-grow-1">
+                            <h6 class="fw-bold mb-1">Fitness Smartwatch Pro</h6>
+                            <span style="color: var(--primary-accent);">$199.00</span>
+                        </div>
+                        <button class="btn btn-primary-custom btn-sm"><i class="bi bi-cart-plus"></i> Add</button>
+                    </div>
+                </div>
+
+                <div class="card card-custom p-4">
+                    <h5 class="fw-bold mb-4"><i class="bi bi-clock-history"></i> Recent Purchase History</h5>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-semibold">#TC-98100</td>
+                                    <td>April 28, 2026</td>
+                                    <td>$45.50</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-semibold">#TC-97055</td>
+                                    <td>March 15, 2026</td>
+                                    <td>$210.00</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 TrendCart E-Commerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+
+    const btn = document.getElementById('darkModeBtn');
+
+    // Save mode
+    if(document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        btn.innerHTML = '☀️ Light Mode';
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+        btn.innerHTML = '🌙 Dark Mode';
+    }
+}
+
+// Load saved mode
+window.onload = function () {
+    const btn = document.getElementById('darkModeBtn');
+
+    if(localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        btn.innerHTML = '☀️ Light Mode';
+    } else {
+        btn.innerHTML = '🌙 Dark Mode';
+    }
+}
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,461 @@
+/* =========================================
+   style.css - TrendCart E-Commerce Theme
+   ========================================= */
+
+/* Import Google Font (Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+    --bg-light-gray: #F5F5F5;
+    --primary-accent: #FF6B00;
+    --secondary-accent: #222222;
+    --card-bg: #FFFFFF;
+    --btn-color: #E85D04;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light-gray);
+    color: var(--secondary-accent);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navbar-custom .navbar-brand {
+    color: var(--primary-accent);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar-custom .nav-link {
+    color: var(--secondary-accent);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: var(--primary-accent);
+}
+
+/* Navbar Mobile */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Cards */
+.card-custom {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background-color: var(--primary-accent);
+    color: var(--card-bg);
+    border: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--btn-color);
+    color: var(--card-bg);
+}
+
+.btn-outline-custom {
+    border: 2px solid var(--secondary-accent);
+    color: var(--secondary-accent);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--secondary-accent);
+    color: var(--card-bg);
+}
+
+/* Login Box */
+.login-box {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    animation: fadeIn 0.5s ease;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 5px rgba(255,107,0,0.3);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-accent);
+    color: var(--card-bg);
+    padding: 30px 0;
+    margin-top: auto;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+
+    .login-box {
+        padding: 25px;
+    }
+
+    .navbar-custom .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+.dark-mode {
+    --bg-light-gray: #121212;
+    --primary-accent: #FF8C42;
+    --secondary-accent: #F5F5F5;
+    --card-bg: #1E1E1E;
+    --btn-color: #ff7b1a;
+}
+
+/* Body */
+.dark-mode body,
+body.dark-mode {
+    background-color: var(--bg-light-gray);
+    color: var(--secondary-accent);
+}
+
+/* Navbar */
+.dark-mode .navbar-custom,
+body.dark-mode .navbar-custom {
+    background-color: #1E1E1E;
+}
+
+/* Cards */
+.dark-mode .card-custom,
+body.dark-mode .card-custom {
+    background-color: #1E1E1E;
+    color: #F5F5F5;
+}
+
+/* Table */
+.dark-mode table,
+.dark-mode .table,
+body.dark-mode table,
+body.dark-mode .table {
+    color: #F5F5F5;
+}
+
+/* Inputs */
+.dark-mode .form-control,
+body.dark-mode .form-control {
+    background-color: #2A2A2A;
+    border: 1px solid #444;
+    color: white;
+}
+
+.dark-mode .form-control::placeholder,
+body.dark-mode .form-control::placeholder {
+    color: #aaa;
+}
+
+/* Footer */
+.dark-mode footer,
+body.dark-mode footer {
+    background-color: #000;
+}
+
+/* List Group */
+.dark-mode .list-group-item,
+body.dark-mode .list-group-item {
+    background-color: #1E1E1E;
+    color: white;
+}
+
+/* Login Box */
+.dark-mode .login-box,
+body.dark-mode .login-box {
+    background-color: #1E1E1E;
+    color: white;
+}
+.product-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/* MOBILE PRODUCT IMAGE */
+@media(max-width:768px){
+    .product-img{
+        height:160px;
+    }
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+/* HERO SECTION */
+
+.hero-section {
+    background: linear-gradient(to right, #fff4eb, #ffffff);
+    padding: 60px;
+    border-radius: 30px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+.hero-full-img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+@keyframes floatImage {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.category-box {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 18px;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+
+.dark-mode .hero-section {
+    background: linear-gradient(to right, #1e1e1e, #121212);
+}
+
+.dark-mode .hero-subtitle {
+    color: #ddd;
+}
+
+.dark-mode .category-box {
+    background: #2a2a2a;
+}
+
+.dark-mode .input-group-text,
+.dark-mode .form-control {
+    background: #2a2a2a;
+    color: white;
+    border: none;
+}
+
+@media (max-width: 768px) {
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-img {
+        margin-top: 30px;
+    }
+
+    .hero-section {
+        padding: 35px;
+    }
+
+}
+
+/* =========================
+   PREMIUM DISCOUNT SECTION 
+========================= */
+
+.discount-banner{
+    position: relative;
+    width: 100%;
+    height: 380px; /* kecilkan dari 550px */
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* FULL IMAGE */
+.discount-img-full{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+/* HOVER EFFECT */
+.discount-banner:hover .discount-img-full{
+    transform: scale(1.05);
+}
+
+/* OVERLAY */
+.discount-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.70),
+        rgba(0,0,0,0.20)
+    );
+}
+
+/* TEXT CONTENT */
+.discount-content{
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    z-index: 5;
+    color: white;
+    max-width: 500px;
+}
+
+/* TITLE (SMALLER & MORE PREMIUM) */
+.discount-title{
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+/* TEXT */
+.discount-text{
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 20px;
+}
+
+/* BUTTON IMPROVE */
+.discount-content .btn{
+    padding: 12px 28px;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.discount-content .btn:hover{
+    transform: translateY(-3px);
+}
+
+/* SALE BADGE (OPTIONAL CLEANUP) */
+.sale-badge{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: #ff5e00;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-weight: 700;
+    z-index: 5;
+}
+
+/* RESPONSIVE FIX */
+@media(max-width:768px){
+
+    .discount-banner{
+        height: 300px;
+    }
+
+    .discount-content{
+        left: 25px;
+        right: 25px;
+    }
+
+    .discount-title{
+        font-size: 1.8rem;
+    }
+}
+/* =========================
+   DARK MODE SEARCH BAR
+========================= */
+.dark-mode .input-group {
+    background: #ffffff !important;
+    border-radius: 50px;
+}
+
+.dark-mode .input-group-text {
+    background: #ffffff !important;
+    color: #000 !important;
+    border: none !important;
+}
+
+.dark-mode .form-control {
+    background: #ffffff !important;
+    color: #000 !important;
+    border: none !important;
+}
+
+/* =========================
+   DARK MODE FOOTER
+========================= */
+.dark-mode footer {
+    background: #ffffff !important;
+    color: #000 !important;
+}

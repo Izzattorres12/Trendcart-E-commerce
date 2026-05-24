@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TrendCart</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="dashboard.html">
+                <i class="bi bi-bag-check-fill"></i> TrendCart
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end"
+                 id="navbarNav">
+
+                <ul class="navbar-nav gap-3">
+
+                    <li class="nav-item">
+
+                        <button id="darkModeBtn"
+                                class="btn btn-sm btn-dark"
+                                onclick="toggleDarkMode()">
+
+                            🌙 Dark Mode
+
+                        </button>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           href="dashboard.html">
+
+                            Home
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="products.html">
+
+                            Products
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="cart.html">
+
+                            <i class="bi bi-cart3"></i> Cart
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="orders.html">
+
+                            Orders
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="profile.html">
+
+                            Profile
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-danger"
+                           href="index.html">
+
+                            Logout
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- SEARCH BAR -->
+
+    <div class="container mt-4">
+
+        <div class="input-group shadow-sm rounded-pill overflow-hidden">
+
+            <span class="input-group-text bg-white border-0 ps-4">
+
+                <i class="bi bi-search"></i>
+
+            </span>
+
+            <input type="text"
+                   class="form-control border-0 py-3"
+                   placeholder="Search products, brands and categories...">
+
+        </div>
+
+    </div>
+
+    <!-- HERO SECTION -->
+
+    <div class="container mt-4">
+
+        <div class="hero-section">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <span class="badge bg-dark px-3 py-2 mb-3">
+
+                        NEW COLLECTION 2026
+
+                    </span>
+
+                    <h1 class="hero-title mb-4">
+
+                        Discover Your <br>
+                        Perfect Style
+
+                    </h1>
+
+                    <p class="hero-subtitle mb-4">
+
+                        Shop the latest fashion trends,
+                        gadgets and accessories with premium quality and affordable pricing.
+
+                    </p>
+
+                    <a href="products.html"
+                       class="btn btn-dark btn-lg rounded-pill px-4 py-3">
+
+                        Shop Now
+
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <img src="image/homepic.jpg"
+                         class="hero-full-img">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DISCOUNT SECTION -->
+
+<div class="container my-5">
+
+    <div class="discount-banner">
+
+        <!-- FULL IMAGE -->
+
+        <img src="image/discountpic.jpg"
+             class="discount-img-full">
+
+        <!-- DARK OVERLAY -->
+
+        <div class="discount-overlay"></div>
+
+        <!-- TEXT CONTENT -->
+
+        <div class="discount-content">
+
+            <span class="badge bg-danger px-3 py-2 mb-3">
+                LIMITED OFFER
+            </span>
+
+            <h2 class="discount-title">
+
+                Up to 70% OFF <br>
+                Fashion, Gadgets & Accessories
+
+            </h2>
+
+            <p class="discount-text">
+
+                Discover premium products with exclusive discounts.
+                Limited stock available.
+
+            </p>
+
+            <a href="products.html"
+               class="btn btn-light rounded-pill px-4 py-3 fw-bold">
+
+                Shop Discount
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+            
+    <div class="container my-5">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2 class="fw-bold">
+                Featured Products
+            </h2>
+
+            <a href="products.html"
+               class="text-decoration-none fw-semibold">
+
+                View All →
+
+            </a>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- PRODUCT 1 -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-custom h-100 p-3">
+
+                    <span class="discount-tag">-30%</span>
+
+                    <img src="image/headphones.jpg"
+                         class="product-img">
+
+                    <h6 class="fw-bold mt-3">
+                        Wireless Headphones
+                    </h6>
+
+                    <p class="text-muted mb-1">
+                        Audio
+                    </p>
+
+                    <div class="d-flex gap-2 align-items-center">
+
+                        <span class="fw-bold text-danger">
+                            $90.99
+                        </span>
+
+                        <small class="text-decoration-line-through text-muted">
+                            $129.99
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-custom h-100 p-3">
+
+                    <span class="discount-tag">-20%</span>
+
+                    <img src="image/smartwatch.jpg"
+                         class="product-img">
+
+                    <h6 class="fw-bold mt-3">
+                        Fitness Smartwatch Pro
+                    </h6>
+
+                    <p class="text-muted mb-1">
+                        Wearables
+                    </p>
+
+                    <div class="d-flex gap-2 align-items-center">
+
+                        <span class="fw-bold text-danger">
+                            $159.20
+                        </span>
+
+                        <small class="text-decoration-line-through text-muted">
+                            $199
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-custom h-100 p-3">
+
+                    <span class="discount-tag">-15%</span>
+
+                    <img src="image/mouse.jpg"
+                         class="product-img">
+
+                    <h6 class="fw-bold mt-3">
+                        Gaming Mouse
+                    </h6>
+
+                    <p class="text-muted mb-1">
+                        Gaming
+                    </p>
+
+                    <div class="d-flex gap-2 align-items-center">
+
+                        <span class="fw-bold text-danger">
+                            $50.15
+                        </span>
+
+                        <small class="text-decoration-line-through text-muted">
+                            $59
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PRODUCT 4 -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-custom h-100 p-3">
+
+                    <span class="discount-tag">-25%</span>
+
+                    <img src="image/keyboard.jpg"
+                         class="product-img">
+
+                    <h6 class="fw-bold mt-3">
+                        Mechanical Keyboard
+                    </h6>
+
+                    <p class="text-muted mb-1">
+                        Accessories
+                    </p>
+
+                    <div class="d-flex gap-2 align-items-center">
+
+                        <span class="fw-bold text-danger">
+                            $90
+                        </span>
+
+                        <small class="text-decoration-line-through text-muted">
+                            $120
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PRODUCT 5 -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-custom h-100 p-3">
+
+                    <span class="discount-tag">-40%</span>
+
+                    <img src="image/backpack.jpg"
+                         class="product-img">
+
+                    <h6 class="fw-bold mt-3">
+                        Waterproof Backpack
+                    </h6>
+
+                    <p class="text-muted mb-1">
+                        Bags
+                    </p>
+
+                    <div class="d-flex gap-2 align-items-center">
+
+                        <span class="fw-bold text-danger">
+                            $51
+                        </span>
+
+                        <small class="text-decoration-line-through text-muted">
+                            $85
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PRODUCT 6 -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-custom h-100 p-3">
+
+                    <span class="discount-tag">-35%</span>
+
+                    <img src="image/sneakerss.jpg"
+                         class="product-img">
+
+                    <h6 class="fw-bold mt-3">
+                        Sneakers
+                    </h6>
+
+                    <p class="text-muted mb-1">
+                        Fashion
+                    </p>
+
+                    <div class="d-flex gap-2 align-items-center">
+
+                        <span class="fw-bold text-danger">
+                            $71.50
+                        </span>
+
+                        <small class="text-decoration-line-through text-muted">
+                            $110
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PRODUCT 7 -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-custom h-100 p-3">
+
+                    <span class="discount-tag">-10%</span>
+
+                    <img src="image/hoodie.jpg"
+                         class="product-img">
+
+                    <h6 class="fw-bold mt-3">
+                        Hoodie Jacket
+                    </h6>
+
+                    <p class="text-muted mb-1">
+                        Clothing
+                    </p>
+
+                    <div class="d-flex gap-2 align-items-center">
+
+                        <span class="fw-bold text-danger">
+                            $58.50
+                        </span>
+
+                        <small class="text-decoration-line-through text-muted">
+                            $65
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PRODUCT 8 -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-custom h-100 p-3">
+
+                    <span class="discount-tag">-18%</span>
+
+                    <img src="image/speaker.jpg"
+                         class="product-img">
+
+                    <h6 class="fw-bold mt-3">
+                        Bluetooth Speaker
+                    </h6>
+
+                    <p class="text-muted mb-1">
+                        Audio
+                    </p>
+
+                    <div class="d-flex gap-2 align-items-center">
+
+                        <span class="fw-bold text-danger">
+                            $63.96
+                        </span>
+
+                        <small class="text-decoration-line-through text-muted">
+                            $78
+                        </small>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container my-5">
+
+        <div class="row g-4">
+
+            <div class="col-lg-7">
+
+                <div class="card card-custom p-4 h-100">
+
+                    <h5 class="fw-bold mb-4">
+
+                        Monthly Sales Performance
+
+                    </h5>
+
+                    <canvas id="salesChart"></canvas>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="card card-custom p-4 h-100">
+
+                    <h5 class="fw-bold mb-4">
+
+                        <i class="bi bi-fire text-danger"></i>
+
+                        Popular Categories
+
+                    </h5>
+
+                    <div class="d-flex flex-column gap-3">
+
+                        <div class="category-box d-flex justify-content-between align-items-center">
+
+                            <span class="fw-semibold">
+                                Wireless Audio
+                            </span>
+
+                            <span class="badge bg-dark rounded-pill">
+                                Top
+                            </span>
+
+                        </div>
+
+                        <div class="category-box d-flex justify-content-between align-items-center">
+
+                            <span class="fw-semibold">
+                                Smart Watches
+                            </span>
+
+                            <span class="badge rounded-pill"
+                                  style="background-color: var(--primary-accent);">
+
+                                Hot
+
+                            </span>
+
+                        </div>
+
+                        <div class="category-box d-flex justify-content-between align-items-center">
+
+                            <span class="fw-semibold">
+                                Backpacks
+                            </span>
+
+                            <span class="badge bg-secondary rounded-pill">
+                                Trending
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <div class="container text-center">
+
+            <p class="mb-0">
+
+                &copy; 2026 TrendCart E-Commerce.
+                All rights reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        const ctx = document.getElementById('salesChart').getContext('2d');
+
+        new Chart(ctx, {
+
+            type: 'line',
+
+            data: {
+
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+
+                datasets: [{
+
+                    label: 'Products Sales (K)',
+
+                    data: [1200, 1900, 1500, 2200, 2800, 3100],
+
+                    borderColor: '#FF6B00',
+
+                    backgroundColor: 'rgba(255, 107, 0, 0.1)',
+
+                    borderWidth: 3,
+
+                    fill: true,
+
+                    tension: 0.4
+
+                }]
+
+            }
+
+        });
+
+    </script>
+
+    <script>
+
+        function toggleDarkMode() {
+
+            document.body.classList.toggle('dark-mode');
+
+            const btn = document.getElementById('darkModeBtn');
+
+            if(document.body.classList.contains('dark-mode')) {
+
+                localStorage.setItem('darkMode', 'enabled');
+
+                btn.innerHTML = '☀️ Light Mode';
+
+            } else {
+
+                localStorage.setItem('darkMode', 'disabled');
+
+                btn.innerHTML = '🌙 Dark Mode';
+
+            }
+        }
+
+        window.onload = function () {
+
+            const btn = document.getElementById('darkModeBtn');
+
+            if(localStorage.getItem('darkMode') === 'enabled') {
+
+                document.body.classList.add('dark-mode');
+
+                btn.innerHTML = '☀️ Light Mode';
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
